@@ -1,1 +1,1 @@
-# ecosia-search-shortcut
+# Ecosia Search Shortcut
