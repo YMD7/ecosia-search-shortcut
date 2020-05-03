@@ -21,22 +21,23 @@ const selectResult = (direction) => {
 
     if (currentIndex !== 0) {
         const rect = currentSelection.getBoundingClientRect();
+        const yOffset = window.pageYOffset;
         if (direction === 1) {
             if (/pagination-button/.test(currentSelection.getAttribute('class'))) {
-                const targetY = window.pageYOffset + document.querySelector('.pagination').getBoundingClientRect().top;
+                const targetY = yOffset + document.querySelector('.pagination').getBoundingClientRect().top;
                 window.scrollTo(0, targetY);
             }
             else {
                 const clientHeight = document.documentElement.clientHeight;
-                const targetY = (window.pageYOffset + rect.top) - (clientHeight - rect.height) + 10;
-                if (targetY > window.pageYOffset) {
+                const targetY = (yOffset + rect.top) - (clientHeight - rect.height) + 10;
+                if (targetY > yOffset || rect.top < 0) {
                     window.scrollTo(0, targetY);
                 }
             }
         }
         else if (direction === -1) {
-            const targetY = window.pageYOffset + rect.top - 10;
-            if (targetY < window.window.pageYOffset) {
+            const targetY = yOffset + rect.top - 10;
+            if (targetY < yOffset || yOffset < rect.top) {
                 window.scrollTo(0, targetY);
             }
         }
