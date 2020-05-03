@@ -1,0 +1,17 @@
+.result.ess-current:before {
+    content: '▶';
+    position: absolute;
+    top: 5px;
+    left: -24px;
+    color: #FF7950;
+    font-size: small;
+}
+.pagination-button.ess-current:before {
+    content: '▶';
+    transform: rotate(-90deg);
+    position: absolute;
+    top: 22px;
+    left: 7px;
+    color: #FF7950;
+    font-size: small;
+}
