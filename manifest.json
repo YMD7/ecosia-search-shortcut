@@ -2,10 +2,15 @@
   "manifest_version": 2,
   "name": "Ecosia Search Shortcut",
   "version": "1.0",
-  "description": "my extention",
+  "description": "This extension allow to use keyboard short-cuts on Ecosia.org.",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
   "content_scripts": [
     {
-      "matches": ["https://www.ecosia.org/*"],
+      "matches": ["https://www.ecosia.org/search?*"],
       "css": ["style.css"],
       "js": ["script.js"]
     }
